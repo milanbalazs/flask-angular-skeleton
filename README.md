@@ -3,7 +3,7 @@
 ## Tech
 
 ### Backend
- - Python (Flask)
+ - Python (Flask [RESTful])
 
 ### Frontend
  - TypeScript (Angular)
