@@ -51,3 +51,6 @@ http://localhost:9099/api/ping
 ```text
 http://localhost:9099
 ```
+
+**Preview:**
+![preview of frontend](imgs/angular_skeleton.png)
