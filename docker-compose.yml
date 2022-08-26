@@ -1,0 +1,41 @@
+---
+version: "3.8"
+services:
+  backend:
+    environment:
+      RUNNER_USER: ${USER}
+    build:
+      context: src/backend
+    networks:
+      - api
+
+# A persistent volume will be needed for MongoDB because the data is not persistent now.
+  mongodb:
+    image: mongo:5.0.9
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    networks:
+      - api
+
+  api:
+    build:
+      context: src/api
+    restart: always
+    networks:
+      - api
+    depends_on:
+      - backend
+      - mongodb
+      - frontend
+    ports:
+      - '9099:9099'
+
+  frontend:
+    build:
+      context: src/frontend
+    networks:
+      - api
+
+networks:
+  api: {}

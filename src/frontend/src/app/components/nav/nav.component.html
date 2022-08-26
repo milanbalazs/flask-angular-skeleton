@@ -1,0 +1,42 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar>
+      <img src="/assets/logo.png" id="sidenav-logo" alt="image" />
+      <span id="sidenav-company">Angular Skeleton</span>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item class="nav-button" [routerLink]="['/']">Home</a>
+      <a mat-list-item class="nav-button" [routerLink]="['/ping']">PING</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span id="toolbar-title">{{ toolbarTitle | titlecase }}</span>
+      <span class="spacer"></span>
+      <button mat-button mat-icon-button [matMenuTriggerFor]="avatarMenu" class="avatar-icon" aria-label="Avatar icon-button">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #avatarMenu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="onLogout()">Logout</button>
+      </mat-menu>
+
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

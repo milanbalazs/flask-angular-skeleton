@@ -1,0 +1,10 @@
+/* @import "../../../assets/table-design.css"; */
+
+.container {
+  padding: 10px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}

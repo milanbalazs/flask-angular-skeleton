@@ -1,0 +1,13 @@
+---
+version: "3.8"
+services:
+  frontend:
+    build:
+      context: .
+    networks:
+      - api
+    ports:
+      - '9098:80'
+
+networks:
+  api: {}
