@@ -18,6 +18,9 @@
 ### Webserver
  - Nginx
 
+### Database
+ - MongoDB
+
 ### Deployment
  - Docker (Docker Compose)
 
