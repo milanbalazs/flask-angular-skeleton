@@ -1,4 +1,4 @@
-# Skeleton for web application
+<h1 align="center">Skeleton for web application</h1>
 
 <p align="center">
 <img src="https://github.com/milanbalazs/flask-angular-skeleton/workflows/PythonBlack/badge.svg">
