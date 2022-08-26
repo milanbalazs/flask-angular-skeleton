@@ -5,6 +5,8 @@
 <img src="https://github.com/milanbalazs/flask-angular-skeleton/workflows/PythonStyle/badge.svg">
 </p>
 
+---
+
 ## Tech
 
 ### Backend
